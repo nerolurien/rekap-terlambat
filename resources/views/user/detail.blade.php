@@ -117,55 +117,6 @@
         </div>
     </div>
 
-    <!-- Activity History Card (if you have this feature) -->
-    <div class="row">
-        <div class="col-12 mb-4">
-            <div class="card shadow-sm border-0 rounded-3">
-                <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
-                    <h5 class="mb-0 fw-bold">Riwayat Aktivitas</h5>
-                    <span class="badge bg-secondary">5 Aktivitas Terakhir</span>
-                </div>
-                <div class="card-body p-4">
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle">
-                            <thead class="table-light">
-                                <tr>
-                                    <th style="width: 20%">Tanggal & Waktu</th>
-                                    <th style="width: 15%">Aktivitas</th>
-                                    <th>Deskripsi</th>
-                                    <th style="width: 15%">IP Address</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @if(isset($activities) && count($activities) > 0)
-                                    @foreach($activities as $activity)
-                                    <tr>
-                                        <td>{{ $activity->created_at->format('d M Y, H:i') }}</td>
-                                        <td>
-                                            <span class="badge rounded-pill bg-{{ $activity->type == 'login' ? 'success' : 'info' }}">
-                                                {{ ucfirst($activity->type) }}
-                                            </span>
-                                        </td>
-                                        <td>{{ $activity->description }}</td>
-                                        <td>{{ $activity->ip_address }}</td>
-                                    </tr>
-                                    @endforeach
-                                @else
-                                    <tr>
-                                        <td colspan="4" class="text-center py-4 text-muted">
-                                            <i class="mdi mdi-calendar-clock fs-1"></i>
-                                            <p class="mt-2">Belum ada riwayat aktivitas</p>
-                                        </td>
-                                    </tr>
-                                @endif
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Delete Confirmation Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">

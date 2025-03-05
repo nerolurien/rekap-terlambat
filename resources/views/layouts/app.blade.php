@@ -213,12 +213,6 @@
                                             </li>
                                             <li class="divider"></li>
                                             <li>
-                                                <a href="#0">
-                                                    <i class="lni lni-user"></i> View Profile
-                                                </a>
-                                            </li>
-                                            <li class="divider"></li>
-                                            <li>
                                                 <a href="#"
                                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                                     <i class="lni lni-exit"></i> Sign Out
